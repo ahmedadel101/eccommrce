@@ -7,13 +7,17 @@ import { ProductsRoutingModule } from '../products/products-routing.module';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { ReactiveFormsModule } from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
+import {MatSelectModule} from '@angular/material/select';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
+import { FooterComponent } from './components/footer/footer.component';
 
 
 
 @NgModule({
   declarations: [
     TopHeaderComponent,
-    NavbarComponent
+    NavbarComponent,
+    FooterComponent
   ],
   imports: [
     CommonModule,
@@ -21,7 +25,9 @@ import {MatInputModule} from '@angular/material/input';
     ProductsRoutingModule,
     MatFormFieldModule,
     ReactiveFormsModule,
-    MatInputModule
+    MatInputModule,
+    MatSelectModule,
+    MatProgressBarModule
 
   ],
   exports:[
@@ -31,7 +37,10 @@ import {MatInputModule} from '@angular/material/input';
     ProductsRoutingModule,
     MatFormFieldModule,
     ReactiveFormsModule,
-    MatInputModule
+    MatInputModule,
+    MatSelectModule,
+    MatProgressBarModule,
+    FooterComponent
 
   ]
 })

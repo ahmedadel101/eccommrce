@@ -1,5 +1,6 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit , Input} from '@angular/core';
 import { Subscription } from 'rxjs';
+import { CartService } from 'src/app/modules/shared/services/cart.service';
 import { Product } from '../../interfaces/product';
 import { ProductService } from '../../services/product.service';
 
@@ -9,6 +10,7 @@ import { ProductService } from '../../services/product.service';
   styleUrls: ['./products-list.component.scss']
 })
 export class ProductsListComponent implements OnInit , OnDestroy {
+  @Input() dataId:any
   category:any[] = [
     {name:`All Categories` , cantegoryName:`all`},
     {Name:`Clothes` , subCategory:[{name:`Men's clothing` , cantegoryName:`men's clothing`},
@@ -20,14 +22,14 @@ export class ProductsListComponent implements OnInit , OnDestroy {
   ]
   Products:Product[] = []
   unSubscribe!:Subscription
-  constructor(private _product:ProductService){}
+  constructor(private _product:ProductService , private _cart:CartService){}
   ngOnInit(): void {
-   
+
   this.unSubscribe =  this._product.getAllProducts().subscribe(res => {
       next:{
         this.Products = res
         console.log(res);
-        
+
       }
     })
   }
@@ -37,7 +39,7 @@ export class ProductsListComponent implements OnInit , OnDestroy {
         next:{
           this.Products = res
           console.log(res);
-          
+
         }
       })
     }else{
@@ -45,7 +47,10 @@ export class ProductsListComponent implements OnInit , OnDestroy {
         this.Products = category
       })
     }
-   
+
+  }
+  addCart(data:any){
+    this._cart.addToCart(data)
   }
   ngOnDestroy(): void {
   this.unSubscribe.unsubscribe()

@@ -7,13 +7,15 @@ import { ProductsListComponent } from './components/products-list/products-list.
 import { ProductDetailsComponent } from './components/product-details/product-details.component';
 import { StarRatingModule } from 'angular-star-rating';
 import { SharedModule } from '../shared/shared.module';
+import { ProductsCategoryComponent } from './components/products-category/products-category.component';
 
 
 @NgModule({
   declarations: [
     AddProductComponent,
     ProductsListComponent,
-    ProductDetailsComponent
+    ProductDetailsComponent,
+    ProductsCategoryComponent
   ],
   imports: [
     CommonModule,

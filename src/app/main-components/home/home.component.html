@@ -1,0 +1,55 @@
+<section class="mainCategories">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <div routerLink="//products-list" class="mainCards">
+              <div class="cardImage ShopNow">
+                <img  src="../../../assets/imgs/shop.jpg" alt="shop">
+              </div>
+              <div class="cardShopNow">
+                  <div class="cardTitle">
+                    Shop Now
+                  </div>
+              </div>
+          </div>
+        </div>
+          <div class="col-lg-8 col-md-6 col-sm-12" *ngFor="let cat of categories|slice:0:1">
+            <div routerLink="/product-category/{{cat.categoryValue}}" class="mainCards">
+                <div class="cardImage">
+                  <img  [src]="cat.image" [alt]="cat.categoryName">
+                </div>
+                <div class="cardInfo">
+                    <div class="cardTitle">
+                      {{cat.categoryName}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-12" *ngFor="let cat of categories|slice:1:3">
+          <div routerLink="/product-category/{{cat.categoryValue}}" class="mainCards">
+              <div class="cardImage">
+                <img  [src]="cat.image" [alt]="cat.categoryName">
+              </div>
+              <div class="cardInfo">
+                  <div class="cardTitle">
+                    {{cat.categoryName}}
+                  </div>
+              </div>
+          </div>
+        </div>
+          <div class="col-lg-8 col-md-6 col-sm-12" *ngFor="let cat of categories|slice:3:4">
+            <div routerLink="/product-category/{{cat.categoryValue}}" class="mainCards">
+                <div class="cardImage">
+                  <img  [src]="cat.image" [alt]="cat.categoryName">
+                </div>
+                <div class="cardInfo">
+                    <div class="cardTitle">
+                      {{cat.categoryName}}
+                    </div>
+                </div>
+            </div>
+      </div>
+      </div>
+
+    </div>
+</section>

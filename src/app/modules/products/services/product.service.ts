@@ -11,7 +11,7 @@ export class ProductService {
   constructor(private _http:HttpClient) { }
 
   getAllProducts():Observable<any>{
-    return this._http.get(`${environment.apiUrl}products`)
+    return this._http.get(`${environment.apiUrl}products?limit=10`)
   }
   getProductsById(id:any):Observable<any>{
     return this._http.get(`${environment.apiUrl}products/${id}`)
@@ -22,5 +22,5 @@ export class ProductService {
   getProductByCat(cat:any):Observable<any>{
     return this._http.get(`${environment.apiUrl}products/category/${cat}`)
   }
-  
+
 }

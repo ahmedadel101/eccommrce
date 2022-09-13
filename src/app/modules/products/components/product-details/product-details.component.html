@@ -9,7 +9,7 @@
                     <div class="carousel-item">
                         <img class="w-75 h-75 m-auto" [src]="detailsProduct?.image" alt="Image">
                     </div>
-                   
+
                 </div>
                 <a class="carousel-control-prev" href="#product-carousel" data-bs-slide="prev">
                     <i class="fa fa-2x fa-angle-left text-dark"></i>
@@ -23,7 +23,6 @@
         <div class="col-lg-7 pb-5">
             <h3 class="font-weight-semi-bold">{{detailsProduct?.title}}</h3>
             <div class="d-flex mb-3">
-                <star-rating  [rating]="detailsProduct?.rating.rate" [readOnly]="true"></star-rating>
 
                 <!-- <div class="text-primary mr-2">
                     <small class="fas fa-star"></small>
@@ -36,8 +35,8 @@
             </div>
             <h3 class="font-weight-semi-bold mb-4">EGP {{detailsProduct?.price}}</h3>
             <p class="mb-4">{{detailsProduct?.description}}</p>
-           
-      
+
+
             <div class="d-flex align-items-center text-white mb-4 pt-2">
                 <div class="input-group quantity mr-3" style="width: 130px;">
                     <div class="input-group-btn">
@@ -73,5 +72,5 @@
             </div>
         </div>
     </div>
-   
+
 </div>

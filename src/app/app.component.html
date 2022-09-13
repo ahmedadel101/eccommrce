@@ -1,3 +1,7 @@
 <app-top-header></app-top-header>
 <app-navbar></app-navbar>
+<div class="loader"  *ngIf="_loader.loader | async">
+  <mat-progress-bar mode="indeterminate" ></mat-progress-bar>
+</div>
 <router-outlet></router-outlet>
+<app-footer></app-footer>

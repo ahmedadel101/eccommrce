@@ -1,0 +1,27 @@
+  <section class="container">
+
+      <div class="row">
+          <div class="col-md-4" *ngFor="let product of Products">
+              <div class="wsk-cp-product">
+                <div class="wsk-cp-img"><img [src]="product.image" alt="Product" class="img-responsive" /></div>
+                <div class="wsk-cp-text">
+                  <div class="category">
+                    <span>{{product.category}}</span>
+                  </div>
+                  <div class="title-product">
+                    <h3>{{product.title |slice:0:20}}</h3>
+                    <div class="wcf-left"><span class="price">{{product.price}}</span></div>
+                  </div>
+                  <!-- <div class="description-prod">
+                    <p>Description Product tell me how to change playlist height size like 600px in html5 player. player good work now check this link</p>
+                  </div> -->
+                  <div class="card-footer">
+                    <div class="wcf-right"><a routerLink="/products/{{product.id}}" class="btn btns View" >View Details</a></div>
+                    <div class="wcf-right"><a (click)="addCart(product)" class="btn btns AddToCard">Add To Card</a></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+      </div>
+
+  </section>

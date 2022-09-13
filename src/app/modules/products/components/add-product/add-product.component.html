@@ -1,4 +1,4 @@
-<section class="container">
+<section class="container add-product">
     <form class=" tasks row w-100" [formGroup]="addProductForm">
         <div class="task-header  row">
           <div class="col-sm-12 text-center mb-3">
@@ -11,7 +11,7 @@
               <mat-error *ngIf="addProductForm.get('title').errors != null && addProductForm.get('title').touched">
                 title is <strong>required</strong>
               </mat-error>
-      
+
             </div>
             <div class="col-md-6 col-sm-12">
                 <mat-form-field class="w-100">
@@ -20,7 +20,7 @@
                 <mat-error *ngIf="addProductForm.get('image').errors != null && addProductForm.get('image').touched">
                     image is <strong>required</strong>
                 </mat-error>
-        
+
               </div>
             <div class=" col-sm-12">
               <mat-form-field class="w-100">
@@ -31,12 +31,15 @@
               </mat-error>
             </div>
             <div class="col-md-6 col-sm-12 mt-4">
-              <mat-form-field class="w-100">
-                <input name="category" matInput placeholder="category" formControlName="category" />
+              <mat-form-field appearance="fill" class="w-100">
+                <mat-label>Select</mat-label>
+                <mat-select class="w-100" formControlName="category">
+                  <mat-option [value]="catList.categoryValue" *ngFor="let catList of categories">{{catList.categoryName}} </mat-option>
+                </mat-select>
+                <mat-error *ngIf="addProductForm.get('category').errors != null && addProductForm.get('category').touched">
+                  category is <strong>required</strong>
+                </mat-error>
               </mat-form-field>
-              <mat-error *ngIf="addProductForm.get('category').errors != null && addProductForm.get('category').touched">
-                category is <strong>required</strong>
-              </mat-error>
             </div>
             <div class="col-md-6 col-sm-12 mt-4">
               <mat-form-field class="w-100">
@@ -45,21 +48,21 @@
               <mat-error *ngIf="addProductForm.get('price').errors != null && addProductForm.get('price').touched">
                 price is <strong>required</strong>
               </mat-error>
-      
+
             </div>
-          
-      
-      
-      
+
+
+
+
         </div>
         <div class="btns text-center">
             <button (click)="addProduct(addProductForm)" class="btn save me-3 mt-3 "> Save
             </button>
-            <button data-bs-dismiss="modal" #closebutton class="btn save   mt-3 "> Return
+            <button data-bs-dismiss="modal" #closebutton class="btn return   mt-3 "> Return
             </button>
-      
+
         </div>
-      
-      
+        <img src="" alt="">
+
       </form>
 </section>

@@ -15,11 +15,11 @@
                         <a href="#" class="nav-link" data-bs-toggle="dropdown">{{cat?.Name}} <i class="fa fa-angle-down float-right mt-1"></i></a>
                         <div class="dropdown-menu position-absolute bg-secondary border-0 rounded-0 w-100 m-0" >
                             <a (click)="setCategory(subCat.cantegoryName)" class="dropdown-item"  *ngFor="let subCat of cat.subCategory">{{subCat?.name}}</a>
-                            
+
                         </div>
                     </div>
                     <a (click)="setCategory(cat.cantegoryName)" class="nav-item nav-link"  *ngFor="let cat of category|slice:2">{{cat?.name}}</a>
-                  
+
                 </div>
             </nav>
         </div>
@@ -40,18 +40,18 @@
                           <p>Description Product tell me how to change playlist height size like 600px in html5 player. player good work now check this link</p>
                         </div> -->
                         <div class="card-footer">
-                          <div class="wcf-right"><a routerLink="product/{{product.id}}" class="btn btns View" >View Details</a></div>
-                          <div class="wcf-right"><a href="#" class="btn btns AddToCard">Add To Card</a></div>
+                          <div class="wcf-right"><a routerLink="/products/{{product.id}}" class="btn btns View" >View Details</a></div>
+                          <div class="wcf-right"><a (click)="addCart(product)" class="btn btns AddToCard">Add To Card</a></div>
                         </div>
-                      </div> 
+                      </div>
                     </div>
                   </div>
             </div>
         </div>
-      
-      
-      
+
+
+
       </div>
-     
+
     </div>
   </div>
